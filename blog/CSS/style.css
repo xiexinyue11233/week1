@@ -1,0 +1,215 @@
+/* 设置全局变量 */
+:root {
+   --aside-width:220px;
+   --gap-size:20px;
+   --all-background: #fff;
+}
+/* 只有当 <html> 上有 data-theme="dark" 时才生效。 */
+[data-theme="dark"]{
+  --all-background:#121212;
+  
+  --text:#e0e0e0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;    
+}
+nav a {
+    color: var(--all-background);
+}
+header {
+    color: var(--all-background);
+    background: #333;
+}
+header .wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.layout {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    /* 给所有子项之间加20px */
+    gap: var(--gap-size);
+    
+}
+
+.layout aside {
+    /* 顶对齐 */
+    align-self: start;
+    background:var(--all-background);
+    padding: 10px;
+    flex: 0 0 200px;
+    
+}
+.layout main {
+    flex:1;
+}
+.wrapper {
+    display: flex;
+    padding: 20px 0;
+    /* 让子级元素垂直居中 */
+    align-items: center;
+}
+
+h1 {
+    font-weight: normal;
+    margin-right: 20px;
+}
+nav ul {
+    display: flex;
+}
+nav li {
+    margin: 10px;
+}
+input {
+    /* 将元素推到最右边，auto 就是“把剩下的空间都给我” 除去input本身所占的位置空间其他都给left */
+    margin-left: auto;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+footer {
+    text-align: center;
+    height: 300px;
+    line-height: 300px;
+}
+article {
+    display: flex;
+    padding: 10px;
+    background: var(--all-background);
+    margin-bottom: 20px;
+}
+article .right {
+    padding: 10px;
+}
+article .right h3 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+article .right p {
+    color: #6f6e6e;
+}
+article img {
+    width: 230px;
+    height: 160px;
+    margin: 10px;
+}
+#article1 {
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+}
+#article1 p {
+    text-align: left;
+    margin: 20px 0;
+}
+section {
+    text-align: left;
+}
+section h3,
+li {
+    margin-bottom: 5px;
+}
+section p {
+    text-align: center !important;
+}
+section span {
+    color: rgb(14, 101, 231);
+    background: rgb(214, 219, 225);
+    border-radius: 20px;
+    padding: 3px;
+    font-size: 14px;
+}
+.layout2 {
+    
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: 1fr var(--aside-width);
+    margin: 0 auto;
+    gap: var(--gap-size);
+}
+.layout2 main {
+    background: var(--all-background);
+}
+.layout2 aside{
+    background: var(--all-background);
+    padding: 20px;
+}
+
+/* @media是css媒体查询的关键字，当……条件满足时，就启用这段 CSS*/
+@media(max-width:900px){
+    .layout {
+        flex-direction: column;
+    }
+    .layout aside {
+        display: none;
+    }
+}
+/*平板：≥600px 且 <900px → 两栏但侧边栏变窄 */
+@media(min-width:600px ) and (max-width:900px) {
+    :root {
+   --aside-width:200px;
+   --gap-size:10px;
+    }
+}
+/* 手机：<600px → 单栏隐藏侧边栏 */
+@media(max-width:600px) {
+    /* 改变变量 */
+    :root {
+   --aside-width:0;
+   --gap-size:0;
+    }
+}
+#themeToggle {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    border: none;
+    display: none;
+    z-index: 999; 
+}
+#themeToggle.show {
+    display: block;
+}
+.layout2 main {
+    /* 声明内部使用网格布局*/
+    display: grid;
+    /* 各格子之间间距 */
+    gap: 10px;
+    text-align: center;
+    line-height: 100px;
+    color: #ffffff;
+    /* 设置列 4列 一等分一列 */
+    grid-template-columns: repeat(4, 1fr);
+    /* 设置行 3行 一等分一行 */
+    grid-template-rows: repeat(3, 1fr);
+}
+.layout2 main div {
+   
+    background: #f39925;
+}
+.layout2 .top {
+    /* 合并4列 */
+    grid-column: span 4;
+}
+.layout2 .aside {
+    grid-row: span 2;
+}
+.layout2 .content {
+    /* 行 / 列 */
+    grid-area:span 2 / span 3 ;
+}

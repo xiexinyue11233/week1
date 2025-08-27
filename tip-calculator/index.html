@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小费计算器</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="card">
+        <h2>小费计算器</h2>
+        <h3>账单金额（¥）</h3>
+        <!--  type="number" 调出数字键盘，浏览器自带上下箭头增减。
+            min="0" 不允许负数。
+            step="0.5" 点右侧箭头或滚轮一次增减 0.50（即保留两位小数）。step的值默认为1
+        -->
+        <input type="number" id="bill" step="1" min="0" placeholder="例如 100">
+        <h3>小费率（%）</h3>
+        <input type="number" id="tip" step="0.50" min="0" value="15">
+        <!-- 直接在按钮上设置点击事件 当点击这个按钮后调用getValue() -->
+        <button onclick="getValue()">计算</button>
+        <p id="result"></p>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

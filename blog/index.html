@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+      <div class="wrapper">
+        <h1>我的个人博客</h1>
+      <nav>
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">前端知识</a></li>
+          <li><a href="#Technology">技术栈</a></li>
+          <li><a href="#article">文章</a></li>
+        </ul>
+      </nav>
+      <input type="text" placeholder="&#128269; 搜索内容">
+      </div>
+    </header>
+    <div class="layout">
+    <main>
+      <!-- article 是HTML5引入的语义化标签 用来表示可以独立分发或者复用的完整内容块（文章、博客、帖子、新闻等） -->
+      <article id="Technology">
+        <div class="wrapper">
+          <img src="./images/css01.png" alt="这是css图片">
+          <div class="right">
+            <h3>CSS是什么？CSS的作用是什么？</h3>
+            <p>CSS（级联样式表）是为 Web 内容设置样式的代码。
+              与 HTML 一样，CSS 不是一种编程语言。它也不是标记语言。
+              CSS 是一种样式表语言。CSS 用于设置 HTML 元素的样式</p>
+          </div>
+          </div>
+      </article>
+      <article id="article1">
+          <h2>HTML 语义化入门</h2>
+          <time datetime="2025-08-25">2025-08-25</time>
+          <p>语义化 HTML 不仅利于 SEO，还能提升可访问性……</p>
+
+          <section>
+            <h3>语义化标签</h3>
+            <ul>
+              <li>section：按主题分组 就像书的“章”</li>
+              <li>article：独立完整的内容 就像书的“独立文章”</li>
+              <li>div：无语义，仅布局 空白盒子</li>
+            </ul>
+            <p> 标签: <span>HTML</span> <span>CSS</span> </p>
+          </section>
+      </article>
+      </main>
+      <aside>
+        <p>热门文章</p>
+        <section>
+          <h3>HTML参考文档</h3>
+          <img src="./images/ht5.jpg" style="width: 200px ; height: 120px;">
+        </section>
+      </aside>
+      
+    
+    </div>
+    <div class="layout2">
+      <main>
+        <div class="top">1</div>
+        
+        <div class="aside">5</div>
+        <div class="content">6</div>
+      </main>
+      <aside>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">javascript</a></li>
+        </ul>
+      </aside>
+    </div>
+    <button id="themeToggle"> 🌗</button>
+    <footer>
+      © 2025 frontend-90days
+    </footer>
+    <script src="./JS/index.js"></script>
+</body>
+</html>

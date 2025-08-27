@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f6f8fa;
+}
+.card {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    /* 四周等宽阴影示例 box-shadow: 0 0 10px 5px rgba(0, 0, 0, .35);*/
+    /* 0 0 不偏移 第一个0代表向上下偏移 第二个0 代表左右偏移 10px 代表模糊半径 5px 向外再扩 5 px  */
+    box-shadow:0 0 2px  rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    padding: 30px;
+}
+h2 {
+    margin: 20px 0;
+}
+input {
+    height: 35px;
+    width: 350px;
+    margin: 10px 0 ;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    width: 350px;
+    background: rgb(62, 126, 235);
+    text-align: center;
+    height: 40px;
+    line-height: 30px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor:pointer;
+}
